@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron" style="text-align:center">
+    <h1>Ne znate šta da jedete za ručak?</h1>
+    <p class="lead">Klikom na dugme se rješavate glavobolje od neodlučnosti.</p>
+    <p>
+        @using (Html.BeginForm("Predlozi", "Home"))
+        {
+            <input class="btn btn-primary btn-lg" type="submit" value="Predloži!" />
+        }
+    </p>
+</div>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<StaRucati.Models.Jelo>
+
+@{
+    ViewBag.Title = "Sva jela";
+}
+
+<h2>Sva jela</h2>
+
+<p>
+    @Html.ActionLink("Dodaj novo jelo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cijena)
+        </th>
+        <th>
+            @Html.DisplayName("Restoran")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cijena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Restoran.Naziv)
+        </td>
+        <td>
+            @Html.ActionLink("Izbriši", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
